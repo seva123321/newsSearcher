@@ -1,5 +1,6 @@
 import ThemeCard from '@/components/ThemeCard';
 import { useQuery } from '@tanstack/react-query';
+import FormModal from '@/components/FormModal';
 import {
   Button,
   DatePicker,
@@ -106,6 +107,13 @@ export const MainPage = () => {
     ],
   };
 
+  // Обработчик успешной отправки формы
+  const handleFormSuccess = (values: any) => {
+    console.log('Форма успешно отправлена:', values);
+    // Здесь можно обновить список данных на странице
+    // refetch() или обновить состояние
+  };
+
   const formatDateRange = (start: string, end: string) => {
     const startDate = new Date(start);
     const endDate = new Date(end);
@@ -141,6 +149,18 @@ export const MainPage = () => {
                   )}
                 </span>
               </div>
+              {/* Вариант 1: Стандартная кнопка */}
+              <FormModal onSuccess={handleFormSuccess} />
+
+              {/* Вариант 2: Кастомная кнопка-триггер */}
+              {/* <FormModal 
+                    onSuccess={handleFormSuccess}
+                    triggerButton={
+                      <Button type="primary" style={{ marginLeft: 16 }}>
+                        Создать новость
+                      </Button>
+                    }
+                  /> */}
 
               <div className="flex items-center gap-2 px-3 py-2 bg-[var(--color-accent-bg)] rounded-lg">
                 <FileTextOutlined className="text-[var(--color-accent)]" />
