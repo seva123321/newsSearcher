@@ -12,21 +12,11 @@ import {
   Divider,
 } from 'antd';
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
-import type { Dayjs } from 'dayjs';
 
-interface DataItem {
-  id: string;
-  title: string;
-  description?: string;
-  date: string;
-}
+import type { DataItem, FormValues } from '@/types';
+import { dataTG } from '@/mockData';
 
-interface FormValues {
-  title: string;
-  date: Dayjs;
-}
-
-const FormModalWithList: React.FC = () => {
+export const FormModal: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -35,20 +25,7 @@ const FormModalWithList: React.FC = () => {
   // Загрузка данных при открытии модалки
   const fetchData = useCallback(async () => {
     // Имитация загрузки данных
-    const mockData: DataItem[] = [
-      {
-        id: '1',
-        title: '@baza2',
-        description: 'Ночная атака...',
-        date: '2026-06-10',
-      },
-      {
-        id: '2',
-        title: '@mash',
-        description: 'Ситуация на фронтах...',
-        date: '2026-06-09',
-      },
-    ];
+    const mockData: DataItem[] = dataTG;
     setDataList(mockData);
   }, []);
 
@@ -113,7 +90,11 @@ const FormModalWithList: React.FC = () => {
 
   return (
     <>
-      <Button type="primary" icon={<PlusOutlined />} onClick={handleShowModal}>
+      <Button
+        className="h-auto"
+        icon={<PlusOutlined />}
+        onClick={handleShowModal}
+      >
         Добавление TLG
       </Button>
 
@@ -123,7 +104,7 @@ const FormModalWithList: React.FC = () => {
         onCancel={handleCancel}
         footer={null}
         width={700}
-        destroyOnClose
+        destroyOnHidden
       >
         {/* Форма добавления - все поля в одной строке */}
         <div className="mb-6">
@@ -199,5 +180,3 @@ const FormModalWithList: React.FC = () => {
     </>
   );
 };
-
-export default FormModalWithList;
