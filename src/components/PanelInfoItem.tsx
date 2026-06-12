@@ -6,7 +6,7 @@ export const PanelInfoItem: React.FC<PanelInfoItemProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex items-center gap-2 px-3 py-2 bg-(--color-accent-bg) rounded-lg">
+    <div className="flex items-center gap-2 px-3 py-2  rounded-lg">
       {icon}
       <span className="text-sm font-medium text-(--color-text-h)">
         {title && `${title}:`}&nbsp;
