@@ -17,8 +17,8 @@
   --color-social-bg: rgba(244, 243, 236, 0.5);
 
   /* Тени */
-  --shadow-default: rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
-                    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow-default:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   /* Шрифты */
   --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -47,8 +47,8 @@
   --color-accent-border: rgba(192, 132, 252, 0.5);
   --color-social-bg: rgba(47, 48, 58, 0.5);
 
-  --shadow-default: rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
-                    rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  --shadow-default:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 }
 
 /* ---------- Дополнительные стили для элементов (не зависят от темы) ---------- */
@@ -68,7 +68,8 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-heading);
   font-weight: 500;
   color: var(--color-text-h);
