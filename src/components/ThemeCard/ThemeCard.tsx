@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, Divider, Collapse } from 'antd';
 
 import { List } from '@/ui';
@@ -12,13 +11,20 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({
   theme,
   news,
   defaultCollapsed = false,
+  allCollapsed,
   onToggleCollapse,
 }) => {
   const displayNews = news;
   const newsCount = news.length;
+  const defaultActiveKey = (
+    allCollapsed !== undefined ? allCollapsed : defaultCollapsed
+  )
+    ? []
+    : ['1'];
 
   const handleCollapseChange = (keys: string | string[]) => {
-    const isCollapsed = keys.length === 0;
+    const newKeys = Array.isArray(keys) ? keys : [keys];
+    const isCollapsed = newKeys.length === 0;
     onToggleCollapse?.(isCollapsed);
   };
 
@@ -29,9 +35,10 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({
       style={{ borderRadius: '1rem', backgroundColor: 'var(--color-bg)' }}
     >
       <Collapse
+        key={allCollapsed ? 'collapsed' : 'expanded'}
         bordered={false}
         size="small"
-        defaultActiveKey={defaultCollapsed ? [] : ['1']}
+        defaultActiveKey={defaultActiveKey}
         onChange={handleCollapseChange}
         expandIconPlacement="end"
         ghost

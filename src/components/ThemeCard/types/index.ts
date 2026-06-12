@@ -3,6 +3,7 @@ import type { NewsItem, NewsTheme } from '@/types';
 export interface ThemeCardProps extends NewsTheme {
   maxNews?: number;
   defaultCollapsed?: boolean;
+  allCollapsed?: boolean;
   onToggleCollapse?: (collapsed: boolean) => void;
 }
 
