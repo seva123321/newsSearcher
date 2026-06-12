@@ -3,6 +3,7 @@
 ```
   <type>(<scope>): <subject>
 ```
+
 где:
 -type — обязательный: feat, fix, docs, style, refactor, test, chore, perf, ci, build, revert
 -scope — необязательный (например, (api), (ui))
