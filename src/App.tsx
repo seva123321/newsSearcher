@@ -6,7 +6,6 @@ import locale from 'antd/locale/ru_RU';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
 
-// 1. Устанавливаем русскую локаль для dayjs (библиотека для работы с датами внутри Ant Design)
 dayjs.locale('ru');
 const queryClient = new QueryClient();
 
