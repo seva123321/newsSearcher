@@ -3,7 +3,7 @@ import type { DataItem, NewsData } from '@/types';
 export const dataServer: NewsData = {
   info: {
     date_range: {
-      start_dt: '2026-06-10T09:15:12.155Z',
+      start_dt: '2026-01-02T01:23:12.155Z',
       end_dt: '2026-06-10T09:15:12.155Z',
     },
     total_news: 30,
