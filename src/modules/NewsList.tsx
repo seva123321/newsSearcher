@@ -1,12 +1,8 @@
-import { useState } from 'react';
 import { List } from '@/ui';
 import { ThemeCard } from '@/components';
 import type { NewsListProps } from '@/types';
 
-export const NewsList: React.FC<NewsListProps> = ({ data }) => {
-  // 💡 TS автоматически выведет, что item имеет тип NewsTheme
-  const [collapsed, setCollapsed] = useState<boolean>(true);
-
+export const NewsList: React.FC<NewsListProps> = ({ data, allCollapsed }) => {
   return (
     <div className="space-y-4">
       <List
@@ -16,7 +12,7 @@ export const NewsList: React.FC<NewsListProps> = ({ data }) => {
             key={item.theme}
             theme={item.theme}
             news={item.news}
-            onToggleCollapse={(newCollapsed) => setCollapsed(newCollapsed)}
+            allCollapsed={allCollapsed}
           />
         )}
       />
