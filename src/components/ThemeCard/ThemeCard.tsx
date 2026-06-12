@@ -1,11 +1,10 @@
 import { Card, Divider, Collapse } from 'antd';
+import type { CollapseProps } from 'antd';
 
 import { List } from '@/ui';
 import { Item } from '@/components/ThemeCard/ui/Item';
 import { Header } from '@/components/ThemeCard/ui/Header';
 import type { ThemeCardProps } from '@/components/ThemeCard/types';
-
-const { Panel } = Collapse;
 
 export const ThemeCard: React.FC<ThemeCardProps> = ({
   theme,
@@ -28,6 +27,22 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({
     onToggleCollapse?.(isCollapsed);
   };
 
+  const collapseItems: CollapseProps['items'] = [
+    {
+      key: '1',
+      label: <Header theme={theme} newsCount={newsCount} />,
+      children: (
+        <>
+          <Divider style={{ margin: '1rem 0 1rem 0' }} />
+          <List
+            items={displayNews}
+            render={(item, index) => <Item item={item} index={index} />}
+          />
+        </>
+      ),
+    },
+  ];
+
   return (
     <Card
       className="mb-1 shadow-md hover:shadow-lg transition-shadow duration-300"
@@ -42,15 +57,8 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({
         onChange={handleCollapseChange}
         expandIconPlacement="end"
         ghost
-      >
-        <Panel key="1" header={<Header theme={theme} newsCount={newsCount} />}>
-          <Divider style={{ margin: '1rem 0 1rem 0' }} />
-          <List
-            items={displayNews}
-            render={(item, index) => <Item item={item} index={index} />}
-          />
-        </Panel>
-      </Collapse>
+        items={collapseItems}
+      />
     </Card>
   );
 };
