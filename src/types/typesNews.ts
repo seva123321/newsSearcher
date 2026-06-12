@@ -23,6 +23,7 @@ export interface NewsTheme {
 
 export interface NewsListProps {
   data: NewsTheme[];
+  allCollapsed: boolean;
 }
 
 export interface NewsData {
