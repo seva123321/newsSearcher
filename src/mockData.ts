@@ -1,0 +1,69 @@
+import type { DataItem, NewsData } from '@/types';
+
+export const dataServer: NewsData = {
+  info: {
+    date_range: {
+      start_dt: '2026-06-10T09:15:12.155Z',
+      end_dt: '2026-06-10T09:15:12.155Z',
+    },
+    total_news: 30,
+    total_groups: 10,
+  },
+  data: [
+    {
+      theme: 'БПЛА в Москве',
+      news: [
+        {
+          tlg_chanel: '@baza2',
+          date: '2026-06-10T09:15:12.155Z',
+          link: 'https://t.me/baza2/6567326523',
+          text: 'БПЛА сегодня летали в Москве. По предварительным данным, нарушений нет.',
+        },
+      ],
+    },
+    {
+      theme: 'СВО',
+      news: [
+        {
+          tlg_chanel: '@baza2',
+          date: '2026-06-10T09:15:12.155Z',
+          link: 'https://t.me/baza2/6567326523',
+          text: 'БПЛА сегодня летали в Москве',
+        },
+        {
+          tlg_chanel: '@baza2',
+          date: '2026-06-10T09:15:12.155Z',
+          link: 'https://t.me/baza2/6567326523',
+          text: 'БПЛА сегодня летали в Москве',
+        },
+        {
+          tlg_chanel: '@baza2',
+          date: '2026-06-10T09:15:12.155Z',
+          link: 'https://t.me/baza2/6567326523',
+          text: 'БПЛА сегодня летали в Москве',
+        },
+        {
+          tlg_chanel: '@baza2',
+          date: '2026-06-10T09:15:12.155Z',
+          link: 'https://t.me/baza2/6567326523',
+          text: 'БПЛА сегодня летали в Москве',
+        },
+      ],
+    },
+  ],
+};
+
+export const dataTG: DataItem[] = [
+  {
+    id: '1',
+    title: '@baza2',
+    description: 'Ночная атака...',
+    date: '2026-06-10',
+  },
+  {
+    id: '2',
+    title: '@mash',
+    description: 'Ситуация на фронтах...',
+    date: '2026-06-09',
+  },
+];
