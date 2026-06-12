@@ -11,12 +11,11 @@ export const NewsList: React.FC<NewsListProps> = ({ data }) => {
     <div className="space-y-4">
       <List
         items={data}
-        render={(item, index) => (
+        render={(item) => (
           <ThemeCard
-            key={index}
+            key={item.theme}
             theme={item.theme}
             news={item.news}
-            maxNews={5}
             onToggleCollapse={(newCollapsed) => setCollapsed(newCollapsed)}
           />
         )}

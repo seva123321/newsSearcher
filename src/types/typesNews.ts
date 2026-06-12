@@ -10,7 +10,7 @@ export interface Info {
 }
 
 export interface NewsItem {
-  tlg_chanel: string;
+  tlg_channel: string;
   date: string;
   link: string;
   text: string;
