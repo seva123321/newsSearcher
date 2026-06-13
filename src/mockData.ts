@@ -1,4 +1,4 @@
-import type { FormValues, NewsData } from '@/types';
+import type { TgChannelsResponse, NewsData } from '@/types';
 
 export const dataServer: NewsData = {
   info: {
@@ -53,7 +53,7 @@ export const dataServer: NewsData = {
   ],
 };
 
-export const dataTG: FormValues = {
+export const dataTG: TgChannelsResponse = {
   data: [
     {
       tlg_channel: '@bazabazon',

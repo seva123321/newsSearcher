@@ -1,10 +1,8 @@
-// import type { Dayjs } from 'dayjs';
-
-export interface DataItem {
+export interface TgChannel {
   tlg_channel: string;
   date: string;
 }
 
-export interface FormValues {
-  data: DataItem[];
+export interface TgChannelsResponse {
+  data: TgChannel[];
 }

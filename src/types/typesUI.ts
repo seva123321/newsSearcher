@@ -1,13 +1,13 @@
-import type { DateRange, Info, DataItem } from '@/types';
+import type { DateRange, Info, TgChannel } from '@/types';
 import type { ReactNode } from 'react';
 
 export interface PanelActiveProps {
-  dataRange: DateRange;
+  dataRange: DateRange | undefined;
   onSearch?: (params: { start_dt: string; end_dt: string }) => void;
 }
 
 export interface PanelInfoProps {
-  data: Info;
+  data: Info | undefined;
   onToggleAll: (toggle: boolean) => void;
   allCollapsed: boolean;
 }
@@ -20,27 +20,35 @@ export interface PanelInfoItemProps {
 }
 
 export interface ChannelItemProps {
-  item: DataItem;
+  item: TgChannel;
   onDelete: (tlg_channel: string) => void;
+  loading?: boolean;
 }
 
 export interface ButtonAllCollapsedProps {
   onToggleAll: (toggle: boolean) => void;
   allCollapsed: boolean;
 }
+
 export interface ButtonShowModalProps {
-  setIsModalOpen: (trigger: boolean) => void;
-  setDataList: (data: DataItem[] | ((prev: DataItem[]) => DataItem[])) => void;
+  onClick: () => void;
+  isLoading?: boolean;
 }
 
 export interface TlgListProps {
-  dataList: DataItem[];
-  setDataList: (data: DataItem[] | ((prev: DataItem[]) => DataItem[])) => void;
+  dataList: TgChannel[];
+  setDataList: (
+    data: TgChannel[] | ((prev: TgChannel[]) => TgChannel[])
+  ) => void;
+  isLoading: boolean;
+  isError: boolean;
 }
 
 export interface FormTlgProps {
-  dataList: DataItem[];
-  setDataList: (data: DataItem[] | ((prev: DataItem[]) => DataItem[])) => void;
+  dataList: TgChannel[];
+  setDataList: (
+    data: TgChannel[] | ((prev: TgChannel[]) => TgChannel[])
+  ) => void;
 }
 
 export interface ListProps<T = any> {
