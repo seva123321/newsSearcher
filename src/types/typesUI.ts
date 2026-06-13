@@ -1,4 +1,4 @@
-import type { DateRange, Info } from '@/types/typesNews';
+import type { DateRange, Info, DataItem } from '@/types';
 import type { ReactNode } from 'react';
 
 export interface PanelActiveProps {
@@ -19,12 +19,31 @@ export interface PanelInfoItemProps {
   icon: ReactNode;
 }
 
-export interface ListProps<T = any> {
-  items: T[];
-  render: (item: T, index: number) => ReactNode;
+export interface ChannelItemProps {
+  item: DataItem;
+  onDelete: (tlg_channel: string) => void;
 }
 
 export interface ButtonAllCollapsedProps {
   onToggleAll: (toggle: boolean) => void;
   allCollapsed: boolean;
+}
+export interface ButtonShowModalProps {
+  setIsModalOpen: (trigger: boolean) => void;
+  setDataList: (data: DataItem[] | ((prev: DataItem[]) => DataItem[])) => void;
+}
+
+export interface TlgListProps {
+  dataList: DataItem[];
+  setDataList: (data: DataItem[] | ((prev: DataItem[]) => DataItem[])) => void;
+}
+
+export interface FormTlgProps {
+  dataList: DataItem[];
+  setDataList: (data: DataItem[] | ((prev: DataItem[]) => DataItem[])) => void;
+}
+
+export interface ListProps<T = any> {
+  items: T[];
+  render: (item: T, index: number) => ReactNode;
 }

@@ -1,13 +1,10 @@
-import type { Dayjs } from 'dayjs';
+// import type { Dayjs } from 'dayjs';
 
 export interface DataItem {
-  id: string;
-  title: string;
-  description?: string;
+  tlg_channel: string;
   date: string;
 }
 
 export interface FormValues {
-  title: string;
-  date: Dayjs;
+  data: DataItem[];
 }
