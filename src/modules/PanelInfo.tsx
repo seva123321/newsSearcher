@@ -27,12 +27,12 @@ export const PanelInfo: React.FC<PanelInfoProps> = ({
           /> */}
           <PanelInfoItem
             title="Всего новостей"
-            value={data.total_news}
+            value={data?.total_news || 0}
             icon={<FileTextOutlined className="text-(--color-accent)" />}
           />
           <PanelInfoItem
             title="Групп"
-            value={data.total_groups}
+            value={data?.total_groups || 0}
             icon={<TeamOutlined className="text-(--color-accent)" />}
           />
         </div>
