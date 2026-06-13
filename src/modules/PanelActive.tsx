@@ -1,4 +1,4 @@
-import { FormModal } from '@/components';
+import { FormModal } from '@/modules';
 import type { PanelActiveProps } from '@/types';
 import { Button, DatePicker } from 'antd';
 import { CalendarOutlined, SearchOutlined } from '@ant-design/icons';

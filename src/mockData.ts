@@ -1,4 +1,4 @@
-import type { DataItem, NewsData } from '@/types';
+import type { FormValues, NewsData } from '@/types';
 
 export const dataServer: NewsData = {
   info: {
@@ -53,17 +53,15 @@ export const dataServer: NewsData = {
   ],
 };
 
-export const dataTG: DataItem[] = [
-  {
-    id: '1',
-    title: '@baza2',
-    description: 'Ночная атака...',
-    date: '2026-06-10',
-  },
-  {
-    id: '2',
-    title: '@mash',
-    description: 'Ситуация на фронтах...',
-    date: '2026-06-09',
-  },
-];
+export const dataTG: FormValues = {
+  data: [
+    {
+      tlg_channel: '@bazabazon',
+      date: '2026-06-10',
+    },
+    {
+      tlg_channel: '@mash',
+      date: '2026-06-09',
+    },
+  ],
+};
