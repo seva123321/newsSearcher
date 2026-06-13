@@ -3,7 +3,11 @@ import { formatDateOne } from '@/utils/functions';
 import { DeleteOutlined, SendOutlined } from '@ant-design/icons';
 import { Button, Tag, Avatar, Tooltip } from 'antd';
 
-export const ChannelItem: React.FC<ChannelItemProps> = ({ item, onDelete }) => {
+export const ChannelItem: React.FC<ChannelItemProps> = ({
+  item,
+  onDelete,
+  loading,
+}) => {
   const telegramLink = `https://t.me/${item.tlg_channel.replace('@', '')}`;
 
   const handleLinkClick = (e: React.MouseEvent) => {
@@ -49,6 +53,7 @@ export const ChannelItem: React.FC<ChannelItemProps> = ({ item, onDelete }) => {
               icon={<DeleteOutlined />}
               onClick={() => onDelete(item.tlg_channel)}
               className="opacity-0 group-hover:opacity-100 transition-all duration-200 hover:bg-red-50 dark:hover:bg-red-900/20"
+              loading={loading}
             />
           </Tooltip>
         </div>
